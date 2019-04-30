@@ -14,11 +14,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var distanceTextField: UITextField!
     @IBOutlet weak var starsListTextView: UITextView!
     
+    let starController = StarController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func addStarButtonPressed(_ sender: UIButton) {
+        
+        guard let name = starNameTextField.text,
+        let distance = distanceTextField.text,
+        !name.isEmpty,
+        let distanceDouble = Double(distance)
+        else { return }
+        
+        starController.addStar(named: name, withDistance: distanceDouble)
+    }
+    
+    // TODO: List all of the stars we are tracking
+    func listStars() {
+        
+        // Create a string, append text about each star, display it in the TextView
     }
 }
 
