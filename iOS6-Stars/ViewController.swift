@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listStars()
     }
     
     @IBAction func addStarButtonPressed(_ sender: UIButton) {
@@ -29,12 +31,21 @@ class ViewController: UIViewController {
         else { return }
         
         starController.addStar(named: name, withDistance: distanceDouble)
+        
+        listStars()
     }
     
-    // TODO: List all of the stars we are tracking
+    // List all of the stars we are tracking
     func listStars() {
         
         // Create a string, append text about each star, display it in the TextView
+        var output = ""
+        
+        for star in starController.stars {
+            output += "\(star.name) is \(star.distance) lightyears away.\n"
+        }
+        
+        starsListTextView.text = output
     }
 }
 
