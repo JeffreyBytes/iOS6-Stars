@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Star {
+struct Star: Codable {
     
     let name: String
     let distance: Double
-    
 }

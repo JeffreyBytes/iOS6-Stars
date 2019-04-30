@@ -33,6 +33,15 @@ class ViewController: UIViewController {
         starController.addStar(named: name, withDistance: distanceDouble)
         
         listStars()
+        clearTextFields()
+    }
+    
+    private func clearTextFields() {
+        
+        starNameTextField.text = ""
+        distanceTextField.text = ""
+        starNameTextField.resignFirstResponder()
+        distanceTextField.resignFirstResponder()
     }
     
     // List all of the stars we are tracking
